@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  foreign_id: 9.99
+  foreign_type: MyString
+  user_id: 9.99
+  order_id: 9.99
+  quantity: 1
+  status: MyString
+
+two:
+  foreign_id: 9.99
+  foreign_type: MyString
+  user_id: 9.99
+  order_id: 9.99
+  quantity: 1
+  status: MyString

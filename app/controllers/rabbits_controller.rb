@@ -1,0 +1,2 @@
+class RabbitsController < ApplicationController
+end

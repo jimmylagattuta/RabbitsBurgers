@@ -1,0 +1,2 @@
+class BurgerIngredient < ApplicationRecord
+end
