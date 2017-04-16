@@ -1,0 +1,45 @@
+<h1> Login Here</h1>
+<div class="log">
+	<%= form_tag "/login", method: :post do %>
+		<div>
+		Email: <input type="text" name="email">
+		</div>
+	<br>
+		<div>
+		Password: <input type="password" name="password">
+		</div>
+	<br>
+		<div class="submit_button">
+		<input type="submit" value="Login">
+		<br>
+		<%= button_to "Home", "/rabbitsburgers", method: :get %>
+		</div>
+	<% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="sign">
+	<h2> or Sign Up</h2>
+</div>
+<div class="logsign">
+	<%= form_tag "/users", method: :post do %>
+		First Name: <input type="text" name="first_name"%>
+	<br>
+		Last Name: <input type="text" name="last_name"%>
+	<br>
+		Email: <input type="email" name="email"%>
+	<br>
+		Password: <input type="password" name="password"%>
+	<br>
+		Password Confirmation: <input type="password" name="password_confirmation"%>
+	<br>
+		<input type="hidden" name="admin" value="false" %>
+		<input type="submit" name="Create Account" %>
+	<% end %>
+</div>

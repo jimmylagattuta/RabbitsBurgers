@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="floatleftuser">
+			<a href="/rabbitsburgers">Rabbit's Burgers</a>
+		</div>
+	</div>
+	<div class="floatright">
+		<a href="/logout"> Logout </a>
+	</div> 
+	<div class="floatright">
+		<a href="/orders"> Order </a>
+	</div> 
+</nav>
+<br>
+<div class="User">
+	<h1> User Page </h1>
+	<div class="userinfo">
+		Hello <%= @user.first_name %>
+		<%= @user.last_name %>,
+		<br>
+		Your Email on File<br> is: <%= @user.email %>.
+	</div>
+</div>
+
+<div class="api">
+	<h2> Stripe API will allow us<br> to handle payment online </h2>
+</div>
+
+
+<div class="log">
+	<h1> Edit page </h1>
+	<%= form_tag "/users/#{current_user.id}", method: :patch do %>
+		<div>
+		First Name: <input type="text" name="first_name" value="<%= @user.first_name %>"%>
+	<br>
+		Last Name: <input type="text" name="last_name" value="<%= @user.last_name %>"%>
+	<br>
+		Email: <input type="email" name="email" value="<%= @user.email %>"%>
+	<br>
+	<br>
+		<input type="submit" value="Edit User Info">
+	<% end %>
+</div>
+<% if current_user.admin %>
+	<div class="photo">
+		<h4> Add Burger Photo </h4>
+	</div>
+<% end %>
+<%= button_to "Home", "/rabbitsburgers", method: :get %>

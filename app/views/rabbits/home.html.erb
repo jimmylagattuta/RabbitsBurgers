@@ -1,0 +1,100 @@
+<div class="home_text">
+ 	<% if !current_user %>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+	  			<div class="floatleft">
+					<a href="/rabbitsburgers">Rabbit's Burgers</a>
+	  		</div>
+	  		<div class="floatright">
+	  			<a href="/signup">Signup</a>
+	  		</div>
+	  		<div class="floatright">
+	  			<a href="/login">Login</a>
+	  		</div>
+		</nav>
+	<% end %>
+	<% if current_user %>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+	  			<div class="floatleft">
+					<a href="/rabbitsburgers">Rabbit's Burgers</a>
+	  		</div>
+	  		<% if current_user.admin %>
+	  			<div class="floatright">
+	  				<a href="/users">Welcome Admin <%= current_user.first_name %></a>
+		  		</div>
+		  		<div class="floatright">
+	  				<a href="/logout"> Logout </a>
+	  			</div> 
+		  	<% else %>
+	  			<div class="floatright">
+	  				<a href="/users">Welcome back, <%= current_user.first_name %></a>
+	  			</div>
+	  			<div class="floatright">
+	  				<a href="/logout"> Logout </a>
+	  			</div> 
+	  		<% end %>
+	  		<br>
+	  		<br>
+	  		<br>
+	  		<div class="signedin2">
+		  		<ul><% @ingredients.each_slice(2) do |ingredient| %>
+		  		<div class="row">
+		  				<% ingredient.each do |name| %>
+		  				<div class="col-md-3">
+		  					<div class="well">
+
+		  						<li> <%= name.name %></li>
+		  					</div>
+		  				</div>
+		  				<% end %>
+
+	  				<% end %>
+	  			</ul>
+	  		</div>
+	  		<div class="signedin">
+	  			<h3> Build Your Burger<br> Ingredients </h3>
+	  		</div>
+	  		<div class="signedinleft">
+	  			<h3> Originals </h3>
+	  		</div>
+	  		<div class="signedin3">
+		  		<% @burgers.each do |burger| %>
+		  		<div class="row">
+	  				<div class="well">
+	  					<h4><%= burger.name %> </h4> 
+
+		  			</div>
+				</div>
+				<% end %>		
+			</div>
+		</nav>
+	<% end %>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<% if !current_user %>
+
+	
+		<ul class="floatlefthook"> Real Beef, Real Patties</ul><br>
+		<ul class="floatlefthook"> Home-Made Mexican Salsas</ul><br>
+		<ul class="floatlefthook"> A Better Decision</ul>
+		<h2><%= @user_id %> </h2>
+
+		<div class="burgers">
+			<% @burgers.each do |burger| %>
+				<a class="floatleftburger" href="/rabbitsburgers/<%= burger.id%>"> <%= burger.name %></a>
+				<br>
+				<br>
+
+			<% end %>
+		<ul class="discount"> Get A Discount With The Mobile Phone App </ul>
+		</div>
+		<br>
+		<br>
+		<br>
+	<% end %>
+</div>

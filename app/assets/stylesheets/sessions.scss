@@ -1,0 +1,46 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+	color: #228B22;
+	font-size: 250%;
+	text-decoration: none;
+}
+
+.logsign {
+	font-size: 260%;
+	color: #800000;
+}
+
+.sign {
+	font-size: 230%;
+	color: #800000;
+}
+
+.userinfo {
+	font-size: 120%;
+	font-weight: bolder;
+}
+
+.submit_button {
+	font-size: 15px;
+}
+
+.log {
+	float: left;
+	text-align: center;
+	text-size: 110%;
+}
+
+.api {
+	float: right;
+	color: #7FFF00;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 20px;
+	outline-width: 4px;
+	padding-bottom: 20px; 
+	outline-style: dotted;
+	outline-color: #FFD700;
+}

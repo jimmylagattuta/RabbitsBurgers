@@ -1,0 +1,12 @@
+<div class="show_title">
+	<h1> The <%= @burger.name %> </h1>
+</div>
+<h2> This burger includes... </h2>
+<div class="show">
+	<% @burger.ingredients.each do |ingredient| %>
+		<h3><li><%= ingredient.name %></li></h3>
+	<% end %>
+</div>
+<br>
+
+<%= button_to "Home", "/rabbitsburgers", method: :get %>

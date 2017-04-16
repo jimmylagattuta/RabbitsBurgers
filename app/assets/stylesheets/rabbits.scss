@@ -1,3 +1,82 @@
 // Place all the styles related to the Rabbits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.show {
+	padding-left: 40px;
+}
+
+.show_title {
+	font-size: 150%;
+}
+
+a {
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+	color: #B22222;
+	font-size: 120%;
+	text-decoration: none;
+}
+
+.burgers {
+	text-align: center;
+	padding-top: 340px;
+}
+
+.discount {
+	font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+	float: right;
+	padding-left: 400px;
+	padding-bottem: 95px;
+	font-size: 140%;
+	color: #D2691E;
+}
+
+.signedin {
+	font-size: 130%;
+	float: right;
+	padding-left: 350px;
+	color: #8B0000;
+	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left:30px;
+  	padding-right:30px;
+  	text-align: center;
+  	}
+
+ .signedin2 {
+	font-size: 150%;
+	float: right;
+	padding-left: 350px;
+	color: #DAA520;
+	padding-left:30px;
+  	padding-right:30px;
+}
+
+.signedinleft {
+	font-size: 110%;
+	float: left;
+	padding-right: 350px;
+	color: #8B0000;
+	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left:30px;
+  	padding-right:30px;
+
+	
+}
+
+ .signedin3 {
+ 	font-size: 130%;
+	float: left;
+	padding-right: 350px;
+	color: #ADFF2F;
+	padding-left:30px;
+  	padding-right:30px;
+    font-family:Papyrun, Arial;
+    font-weight: bolder;
+}
