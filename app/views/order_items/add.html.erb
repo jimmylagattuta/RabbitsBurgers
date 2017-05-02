@@ -1,0 +1,456 @@
+div class="home_text">
+ 	<% if !current_user %>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+	  			<div class="floatleft">
+					<a href="/rabbitsburgers">Rabbit's Burgers</a>
+					</div>
+	  		</div>
+	  		<div class="floatright">
+	  			<a href="/signup">Signup</a>
+	  		</div>
+	  		<div class="floatright">
+	  			<a href="/login">Login</a>
+	  		</div>
+		</nav>
+	<% end %>
+	<% if current_user %>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+	  			<div class="floatleft">
+					<a href="/rabbitsburgers">Rabbit's Burgers</a>
+	  		</div>
+	  		<% if current_user.admin %>
+	  			<div class="floatright">
+	  				<a href="/users">Welcome Admin <%= current_user.first_name %></a>
+		  		</div>
+		  		<div class="floatright">
+	  				<a href="/rabbitsburgers"> Open Slot </a>
+	  			</div> 
+		  	<% else %>
+	  			<div class="floatright">
+	  				<a href="/users">Welcome back, <%= current_user.first_name %></a>
+	  			</div>
+	  			<div class="floatright">
+	  				<a href="/orderitems"> Your Order </a>
+	  			</div> 
+	  		<% end %>
+	  	
+	  		<br>
+	  		<br>
+	  		<br>
+		</nav>
+	<% end %>
+</div>
+
+<div class="row">
+	<% if current_user %>
+		<div class="col-md-1">
+			<div class="well">
+				<div class="signedinleft">
+					<h3> Choose From Menu </h3>
+				</div>
+		</div>
+			</div>
+		<div class="col-md-2">
+	
+			<div class="well">
+				<div class="burgerssign"> 
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+					<% @burgerssorted.each do |burger| %>
+						<a class="floatleftburger" href="/rabbitsburgers/<%= burger.id%>"> <%= burger.name %></a>
+						<br> 
+						<br>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="well">
+			<br>
+			<br>
+			<br>
+			<br>
+				<div class="rowsignedin">
+			  		<% @ingredients.each_slice(2) do |ingre| %>
+			  			<% ingre.each do |item| %>
+			  				<% if item.name == "Salsa Verde" %>
+			  					<% item.name = "Salsa Verde" + " Salsa" %>
+			  				<% end %>
+			  				<%= item.name %>.
+			  			<% end %>
+			  			<br>
+			  		<% end %>
+		  		</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="well">
+			<br>
+				<div class="signedin">
+		  			<h3> Or Build a Burger<br>With These Ingredients... </h3>
+		  		</div>
+			</div>
+		</div>
+	
+
+		<br>
+		<br>
+		<br>
+		
+	<% end %>
+</div>
+<% if !current_user %>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<ul class="floatlefthook"> Real Beef, Real Patties</ul><br>
+	<ul class="floatlefthook"> Home-Made Mexican Salsas</ul><br>
+	<ul class="floatlefthook"> A Better Decision</ul>
+	<h2><%= @user_id %> </h2>
+
+	<div class="burgers">
+		<% @burgerssorted.each do |burger| %>
+			<a class="floatleftburger" href="/rabbitsburgers/<%= burger.id%>"> <%= burger.name %></a>
+			<br>
+			<br>
+			<br>
+		<% end %>
+	</div>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+
+<ul class="discount"> Get A Discount With The Mobile Phone App </ul>
+
+
+.finalorder {
+	font-size: 150%;
+}
+
+.floatleft {
+    float:left;
+    font-family:Papyrun, Arial;
+	font-size: 200%;
+	background-color: #3CB371;
+	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+ 	padding-left:30px;
+  	padding-right:30px;
+
+}
+.floatright {
+    float:right;
+    font-family:Papyrun, Arial;
+	font-size: 150%;
+	background-color: #3CB371;
+	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left:30px;
+  	padding-right:30px;
+}
+
+
+.signedin {
+	float: right;
+	font-size: 130%;
+	padding-left: 8px;
+	padding-right: 8px;
+	color: #8B0000;
+  	margin: 8px;
+  	float: top;
+  	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	border-radius: 20px ; 
+
+ }
+.rowsignedin {
+	float: right;
+	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	border-radius: 40px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 12px;
+	padding-bottom: 12px; 
+
+}
+
+img {
+   display: inline-block;
+}
+
+
+.showingre {
+font-size: 65%;
+	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border-radius: 15px;
+	float: left;
+
+}
+
+.cilantropic {
+	float: right;
+	padding-right: 60px;
+}
+
+.backgroundshow {
+	font-size: 65%;
+	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border-radius: 15px;
+	float: left;
+}
+
+
+
+
+
+
+
+.signedinleft {
+	font-size: 110%;
+	color: #8B0000;
+	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left:30px;
+  	padding-right:30px;
+  	border-radius: 15px;
+  	float: left;
+  	text-align: center;
+
+	
+}
+
+.floatleftburger {
+	position: center;
+	font-family: Papyrus, fantasy;
+	font-size: 90%;
+	font-weight: bolder;
+	background-color: #3CB371;
+	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left:10px;
+  	padding-right:10px;
+  	padding-top: 2px;
+  	margin: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+.burgername {
+	color: #B22222;
+	background-color: #3CB371;
+	margin: 200px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+
+}
+
+.floatlefthook {
+  	float: left;
+	font-size: 140%;
+ 	padding-left:30px;
+  	padding-right:30px;
+  	background-color: #3CB371;
+  	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+	padding-left:30px;
+  	padding-right:30px;
+  	padding-top: 2px;
+  	text-align: left;
+ 	color: #8B0000;
+ 	font-weight: bolder;
+	font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+
+
+
+}
+
+.green {
+	color: #9ACD32;
+	font-size: 80%;
+	font-weight: bolder;
+}
+
+
+
+a {
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+	color: #B22222;
+	font-size: 120%;
+	text-decoration: none;
+    border-radius: 20px ; 
+
+}
+#burgerboss {
+	color:  #000080;
+}
+.burgers {
+	text-align: center;
+	padding-top: 200px;
+}
+
+.discount {
+	font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+	float: right;
+	padding-left: 400px;
+	font-size: 140%;
+	color: #D2691E;
+}
+
+ .signedin2 {
+	font-size: 150%;
+	float: right;
+	padding-left: 350px;
+	color: #DAA520;
+	padding-left:1px;
+  	padding-right:60px;
+  	padding-top: 100px;
+
+}
+
+
+ .signedin3 {
+ 	font-size: 130%;
+	float: left;
+	padding-right: 350px;
+	color: #8B0000;
+	padding-left:30px;
+  	padding-right:30px;
+    font-family:Papyrun, Arial;
+    font-weight: bolder;
+}
+
+
+.floatleftuser {
+	float:left;
+    font-family:Papyrun, Arial;
+	font-size: 100%;
+	background-color: #3CB371;
+	outline-style: solid;
+	outline-color: #000000;
+	outline-width: 3px;
+ 	padding-left:30px;
+  	padding-right:30px;
+  }
+
+  body {
+	background-image: url('breakfast2.png');
+	background-size: 300px, 500px;
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+
+
+h1 {	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+	color: #228B22;
+	font-size: 250%;
+	text-decoration: none;
+}
+
+.logsign {
+	font-size: 260%;
+	color: #800000;
+}
+
+.sign {
+	font-size: 230%;
+	color: #800000;
+}
+
+.userinfo {
+	font-size: 120%;
+	font-weight: bolder;
+}
+
+.show {
+	color: #800000;
+	font-size: 140%;
+}
+
+.submit_button {
+	font-size: 15px;
+}
+
+.log {
+	float: left;
+	text-align: center;
+	text-size: 110%;
+}
+
+.api {
+	float: right;
+	color: #7FFF00;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 20px;
+	outline-width: 4px;
+	padding-bottom: 20px; 
+	outline-style: dotted;
+	outline-color: #FFD700;
+}
+
+
+
+head {
+	background-image: url('logo.JPG');
+	background-size: 800px 140px;
+	background-position: center-top;
+	z-index: 999;
+
+}
+body {
+	background-image: url('logo4.png'),
+					  url('vegtables.png');
+	background-size: 150px 150px, 1300px, 1500px;
+	background-position: center top, left top;
+	background-repeat: no-repeat;
+}
+
+
+.orderitems {
+	float: left;
+}

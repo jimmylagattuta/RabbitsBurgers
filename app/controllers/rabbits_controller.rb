@@ -6,6 +6,7 @@ class RabbitsController < ApplicationController
 
 	def home
 		@burgers = Burger.all
+		@burgerssorted = @burgers.sort
 		@ingredients = Ingredient.all
 	end
 

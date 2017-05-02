@@ -13,80 +13,24 @@
  *= require_tree .
  *= require_self
  */
-head {
-	background-image: url('logo.JPG');
-	background-size: 800px 140px;
-	background-position: center-top;
-	z-index: 999;
-
-}
-body {
-	background-image: url('logo4.png'),
-					  url('vegtables.png');
-	background-size: 150px 150px, 1300px, 1500px;
-	background-position: center top, left top;
-	background-repeat: no-repeat;
-}
 
 
-
-.floatlefthook {
-	font-size: 140%;
- 	padding-left:30px;
-  	padding-right:30px;
-  	background-color: #3CB371;
-  	outline-style: solid;
-	outline-color: #000000;
-	outline-width: 3px;
-	padding-left:30px;
-  	padding-right:30px;
-  	padding-top: 2px;
-  	text-align: center;
-  	float:left;
- 	color: #8B0000;
- 	font-weight: bolder;
-	font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-
-.logo {
-
+#header {
+    background-image:url(../img/background.JPG);
+    -webkit-background-size:/*@@prefixmycss->No equivalent*/;
+    -moz-background-size:cover;
+    -o-background-size:/*@@prefixmycss->No equivalent*/;
+    background-size:cover;
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    position:relative;
 }
 
-}
+.parallax.parallax2 {
+    background-image:url(../img/breakfast2.jpg);
+    background-size:cover;
+    background-position:center center;
 
-.floatleft {
-    float:left;
-    font-family:Papyrun, Arial;
-	font-size: 200%;
-	background-color: #3CB371;
-	outline-style: solid;
-	outline-color: #000000;
-	outline-width: 3px;
- 	padding-left:30px;
-  	padding-right:30px;
 
-}
-.floatright {
-    float:right;
-    font-family:Papyrun, Arial;
-	font-size: 150%;
-	background-color: #3CB371;
-	outline-style: solid;
-	outline-color: #000000;
-	outline-width: 3px;
-	padding-left:30px;
-  	padding-right:30px;
-}
-
-.floatleftburger {
-	position: center;
-	font-family: Papyrus, fantasy;
-	font-size: 20px;
-	font-weight: bolder;
-	background-color: #3CB371;
-	outline-style: solid;
-	outline-color: #000000;
-	outline-width: 3px;
-	padding-left:10px;
-  	padding-right:10px;
-  	padding-top: 2px;
 }

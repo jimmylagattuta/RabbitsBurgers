@@ -8,7 +8,7 @@
 		<a href="/logout"> Logout </a>
 	</div> 
 	<div class="floatright">
-		<a href="/orders"> Order </a>
+		<a href="/orderitems"> Start Order </a>
 	</div> 
 </nav>
 <br>
@@ -18,12 +18,12 @@
 		Hello <%= @user.first_name %>
 		<%= @user.last_name %>,
 		<br>
-		Your Email on File<br> is: <%= @user.email %>.
+		Your Email on File<br> is: <%= @user.email %>
 	</div>
 </div>
 
 <div class="api">
-	<h2> Stripe API will allow us<br> to handle payment online </h2>
+	<h2> Stripe API will allow us<br> to handle payments online </h2>
 </div>
 
 
@@ -44,6 +44,16 @@
 <% if current_user.admin %>
 	<div class="photo">
 		<h4> Add Burger Photo </h4>
+		<h1> ADMIN </h1>
 	</div>
 <% end %>
+
+
+
+
+
+
 <%= button_to "Home", "/rabbitsburgers", method: :get %>
+
+
+

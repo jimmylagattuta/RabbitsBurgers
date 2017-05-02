@@ -1,0 +1,7 @@
+<%= button_to "Home", "/rabbitsburgers", method: :get %>
+<h1> Final Order </h1>
+<div class="finalorder">
+	<ul>Your Subtotal: $<%= @order.subtotal %></ul>
+	<ul>Your Tax: $<%= @order.tax %></ul>
+	<h3>Your Total: $<%= @order.total %></h3>
+</div>

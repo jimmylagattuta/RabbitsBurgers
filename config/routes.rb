@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
-  delete "/logout" => "sessions#destroy"
   get "/logout" => "sessions#destroy"
 
   get "/rabbitsburgers/:id" => "rabbits#show"
@@ -16,7 +15,14 @@ Rails.application.routes.draw do
   get "/users/:id/edit" => "users#edit"
   patch "users/:id" => "users#update"
 
-  post "/orders" => "orders#create"
-  get "/order/:id" => "orders#show"
+  get "/orderitems" => "order_items#index"
+  get "/orderitems/:id" => "order_items#new"
+  post "/orderitems" => "order_items#create"
+  delete "/orderitems/destroy" => "order_items#destroy"
 
+  get "/rabbitsburgers/:id/images/new" => "images#new"
+  post "/rabbitsburgers/:id/images" => "images#create"
+
+  post "/orders" => "orders#create"
+  get "orders/:id" => "orders#show"
 end

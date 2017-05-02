@@ -14,8 +14,11 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+		puts "*" * 100
 		if session[:id]
+			puts "*" * 100
 			session[:id] = nil
+			puts "*" * 100
 			redirect_to "/rabbitsburgers"
 		end
 

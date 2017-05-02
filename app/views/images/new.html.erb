@@ -1,0 +1,9 @@
+<h1> Add Image Here </h1>
+<h2>Adding Image to: <%= @burger.name%></h2>
+
+<%= form_tag "/rabbitsburgers/:id/images", method: :post do %>
+<br>
+	Image: <input type="text" name="burger_image">
+<br>
+<input type="submit" value="Add Image"
+<% end %>

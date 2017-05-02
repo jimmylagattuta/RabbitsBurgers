@@ -1,0 +1,36 @@
+<%= button_to "Home", "/rabbitsburgers", method: :get %>
+
+<%= button_to "Delete Whole Cart", "/orderitems/destroy", method: :delete %>
+<h1> Menu </h1>
+<h3> Click Item to Add to Order </h3>
+
+<% @menu.each do |item| %>
+	<a href="/orderitems/<%=item.id%>"><%= item.name %></a>
+	<br>
+	<br>
+<% end %>
+
+<div class="item">
+<h1> Drinks, Fries, and Shakes </h1>
+	<% @items.each do |item| %>
+		<a href="/orderitems/<%=item.id%>"><%= item.name %></a>
+		<br>
+	<% end %>
+</div>
+<div class="orderitems">
+	<h1> Your Order Items </h1>
+	<% @orderitems.each do |ord| %>
+		<% if ord.status == "Bagged" %>
+			Item Type: <%= ord.menu_item_type %>
+			<br>
+			Quantity: <%= ord.quantity %>
+			<br>
+			Status: <%= ord.status %>
+			<br>
+			<br>
+		<% end %>
+	<% end %>
+</div>
+
+
+<%= button_to "Complete Order", "/orders", method: :post %>
