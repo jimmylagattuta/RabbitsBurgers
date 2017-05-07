@@ -38,7 +38,7 @@ class OrderItemsController < ApplicationController
 								 user_id: current_user.id,
 								 quantity: quantity,
 								 status: status)
-		redirect_to "/orderitems"
+		redirect_to "/rabbitsburgers#chefs"
 	end
 
 	def destroy

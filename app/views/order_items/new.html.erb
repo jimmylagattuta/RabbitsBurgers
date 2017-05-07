@@ -1,14 +1,27 @@
 <h1> Add Item </h1>
 <% if @itemitem %>
+
+
+
+
+
 	<%= form_tag "/orderitems", method: :post do %>
 		<input type="hidden" name="menu_item_id" value="<%= @itemitem.id %>">
 		<input type="hidden" name="menu_item_type" value="<%= Item %>">
-		Quantity of <%=@itemitem.name%>: <input type="text" name="quantity" value="1">
-	<br>
-	<input type="hidden" value="Bagged">
-	<br>
-		<input type="submit" value="Add Item">
+		<input type="hidden" name="quantity" value="1">
+		<input type="hidden" value="Bagged">
+			<input type="submit" value="Add to Order">
 	<% end %>
+
+
+
+
+
+
+
+
+
+
 <% end %>
 <% if @burgeritem %>
 	<%= form_tag "/orderitems", method: :post do %>

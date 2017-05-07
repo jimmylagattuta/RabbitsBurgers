@@ -286,7 +286,6 @@ section::before,section::after {
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
     border-radius:10px;
-    border:5px solid #dadada;
     display:block;
     margin:auto;
     margin-top: 40px;

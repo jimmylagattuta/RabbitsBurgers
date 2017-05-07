@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/rabbitsburgers" => "rabbits#home"
+  post "/rabbitsburgers/:id" => "rabbits#create"
+  get "/rabbitsburgers" => "rabbits#home"
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
@@ -23,6 +25,4 @@ Rails.application.routes.draw do
   get "/rabbitsburgers/:id/images/new" => "images#new"
   post "/rabbitsburgers/:id/images" => "images#create"
 
-  post "/orders" => "orders#create"
-  get "orders/:id" => "orders#show"
 end

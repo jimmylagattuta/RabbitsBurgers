@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
 			puts "*" * 100
 			session[:id] = nil
 			puts "*" * 100
+			flash[:success] = "You have succussfully signed out"
 			redirect_to "/rabbitsburgers"
 		end
 

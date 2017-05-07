@@ -15,6 +15,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="css/bootstrap.icon-large.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -38,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><h2>Meat King</h2></a>
+                <a class="navbar-brand" href="#"><h2>Rabbit's Burgers</h2></a>
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <div class="hidden-xs" id="logo"><a href="#header">
@@ -50,15 +51,19 @@
                 <li><a href="#food-menu">Menu</a></li>
 
                 <% if !current_user %>
-                    <li><a href="#food-menu">Burgers</a></li>
+                    <li><a href="#food-menu">About</a></li>
                     <li><a href="#reservation">Login/ Sign Up</a></li>
-                    <li><a href="#chefs">Ingredients</a></li>
+                    <li><a href="#chefs">Burgers</a></li>
                 <% end %>
                 
                 <% if current_user %>
-                    <li><a href="#chefs">Ingredients</a></li>
-                    <li><a href="#special-offser">Order!</a></li>
-                    <li><a href="/users"> Welcome, <%= current_user.first_name %></a></li>
+<!--                     <li><a href="#chefs">Bag</a></li>
+ -->                
+                    <li><a href="#special-offser">Add to Order!</a></li>
+                 
+                    </a></li>
+                    <li><a href="#chefs">Bag <i class="icon-large icon-fast-food icon-white"></i>
+                    <li><a href="#"> Welcome, <%= current_user.first_name %></a></li>
                     <li><%= button_to "Logout", "/logout", method: :get %> </li>
                 <% end %>                
 
@@ -134,217 +139,29 @@
             <div class="row text-center services-3">
                 <div class="col-sm-3">
                     <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-beer"></i> </div>
-                    <h4>796518</h4>
-                    <p>Mug of Beer Sold</p>
+                    <p></p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-play-circle-o"></i> </div>
-                    <h4>39472</h4>
-                    <p>Movies Watched</p>
+                    <p></p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-truck"></i> </div>
-                    <h4>2188764</h4>
-                    <p>Pizza Deleverd</p>
+                    <p></p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
-                    <div class="icon-border bm10"> <i class="fa fa-users"></i> </div>
-                    <h4>480523</h4>
-                    <p>Customers Worldwide</p>
+
+                    <p></p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.container --> 
     </div><!-- #facts -->
-
-
-
-
-    <div id="food-menu" class="light-wrapper">
-        <section class="ss-style-top"></section>
-        <div class="container inner">
-            <h2 class="section-title text-center">Food Menu</h2>
-            <p class="lead main text-center">There is no sincerer love than the love of food!</p>
-
-            <div class="row">
-                <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="/img/menu/cocktails.png" alt="Hot Drinks"></div>
-                    <div class="menu-titles"><h1 class="">Cocktails</h1></div>
-                    <div class="menu-items ">
-                        <ul>
-                            <li>Black Velvet</li>
-                            <li>Gin Sour</li>
-                            <li>Mojito</li>
-                            <li>Long Island</li>
-                            <li>Orgasm</li>
-                            <li>Bloody Mary</li>
-                            <li>Earthquake</li>
-                            <li>Whisky Mac</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="/img/menu/beer.png" alt="Ice Drinks"></div>
-                    <div class="menu-titles"><h1 class="">Beer</h1></div>
-                    <div class="menu-items ">
-                        <ul>
-                            <li>Lager</li>
-                            <li>Blonde Beer</li>
-                            <li>Black Beer</li>
-                            <li>Blonde Ale</li>
-                            <li>Pilsner</li>
-                            <li>Lemon Beer</li>
-                            <li>Unfiltered Beer</li>
-                            <li>Non-Alcoholic</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="/img/menu/wine.png" alt="Smoothies"></div>
-                    <div class="menu-titles"><h1 class="">Wine</h1></div>
-                    <div class="menu-items ">
-                        <ul>
-                            <li>Sweet Red</li>
-                            <li>Dry Red</li>
-                            <li>Sweet White</li>
-                            <li>Dry White</li>
-                            <li>Rose</li>
-                            <li>Sparkling Wine</li>
-                            <li>Fortified Wine</li>
-                            <li>Frutty Red</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="/img/menu/sprites.png" alt="Deserts"></div>
-                    <div class="menu-titles"><h1 class="">Sprites</h1></div>
-                    <div class="menu-items ">
-                        <ul>
-                            <li>Whisky</li>
-                            <li>Rum</li>
-                            <li>Tequila</li>
-                            <li>Gin</li>
-                            <li>Champagne</li>
-                            <li>Brandy</li>
-                            <li>Absinthe</li>
-                            <li>Liqueur</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <!-- /.container -->
-        <section class="ss-style-bottom"></section>
-    </div><!--/#food-menu-->
-
-
-
-
-    <div id="special-offser" class="parallax pricing">
-        <div class="container inner">
-
-            <h2 class="section-title text-center">Order Here!</h2>
-            <p class="lead main text-center">There is no sincerer love than the love of food!</p>
-            
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    
-                    <div class="pricing-item">
-                        
-                        <a href="#"><img class="img-responsive img-thumbnail" src="/img/dish/dish3.jpg" alt=""></a>
-                        
-                        <div class="pricing-item-details">
-                            
-                            <h3><a href="#">Chicken Fried Rice</a></h3>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            
-                            <a class="btn btn-danger" href="#">Order now</a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <span class="hot-tag br-red">$26</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    
-                    <div class="pricing-item">
-                        
-                        <a href="#"><img class="img-responsive img-thumbnail" src="/img/dish/dish2.jpg" alt=""></a>
-                        
-                        <div class="pricing-item-details">
-                            
-                            <h3><a href="#">Hot Fried Chicken</a></h3>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            
-                            <a class="btn btn-danger" href="#">Order now</a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <span class="hot-tag br-lblue">$37</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="clearfix visible-md"></div>
-                <div class="col-md-6 col-sm-6">
-                    
-                    <div class="pricing-item">
-                        
-                        <a href="#"><img class="img-responsive img-thumbnail" src="/img/dish/dish4.jpg" alt=""></a>
-                        
-                        <div class="pricing-item-details">
-                            
-                            <h3><a href="#">Thi Chicken Momo</a></h3>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            
-                            <a class="btn btn-danger" href="#">Order now</a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <span class="hot-tag br-green">$54</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    
-                    <div class="pricing-item">
-                        
-                        <a href="#"><img class="img-responsive img-thumbnail" src="/img/dish/dish1.jpg" alt=""></a>
-                        
-                        <div class="pricing-item-details">
-                            
-                            <h3><a href="#">Cocktail Sushi</a></h3>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            
-                            <a class="btn btn-danger" href="#">Order now</a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <span class="hot-tag br-red">$27</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container --> 
-    </div><!-- /#special-offser -->
-
-
-
 
     <div id="reservation" class="light-wrapper">
         <section class="ss-style-top"></section>
@@ -416,6 +233,25 @@
                     <% end %>
                 </div>
             <% end %> 
+                <div class="edit">
+                    <% if current_user %>
+                        <div class="edituser">
+                            <h4> Edit User Information </h4>
+                            <%= form_tag "/users/#{current_user.id}", method: :patch do %>
+                            <div>
+                                First Name: <input type="text" name="first_name" value="<%= current_user.  first_name %>"%>
+                            <br>
+                                Last Name: <input type="text" name="last_name" value="<%= current_user.last_name %>"%>
+                            <br>
+                                Email: <input type="email" name="email" value="<%= current_user.email %>"%>
+                            <br>
+                            <br>
+                            <input type="submit" value="Edit User Info">
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+
                 </div><!-- col-md-6 -->
                
             </div>
@@ -429,36 +265,57 @@
 
     <div id="chefs" class="parallax pricing">
         <div class="container inner">
+        <div class="container">
+        <% flash.each do |name, messege| %>
+            <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <%= messege %>
+            </div>
+        <% end %>
+        </div>
+            <% if current_user %>
+                <% if final_products.length != 0%>
+                    <h2 class="section-title text-center">Your Bag</h2>
+                    <p class="lead main text-center"></p>
+                    <p class="lead main text-center">
+                    <% final_products.each do |product| %>
+                        <%= product.menu_item.name %>
+                        <br>
+                        Subtotal: $<%= product.menu_item.price %>
+                        <br>
+                   
+                    <% end %>
+                    </p>
+                <div class="completeorder">
+                    <%= button_to "Finished", "/rabbitsburgers/orders", method: :post %>
+                </div>
+             
+                <% end %>
 
-            <h2 class="section-title text-center">Our Ingredients</h2>
-            <p class="lead main text-center">There is no sincerer love than the love of food!</p>
-            
+            <% end %>
             <div class="row text-center chefs">
                 <div class="col-sm-4">
                     <div class="col-wrapper">
                         <div class="icon-wrapper">
-                            <img src="/img/chefs/1.jpg">
                         </div>
-                        <h3>Saransh Goila</h3>
-                        <p>Vivamus sagittis lacuson augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum ultricies vehicula.</p>
+                        <h3></h3>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="col-wrapper">
                         <div class="icon-wrapper">
-                            <img src="/img/chefs/3.jpg">
                         </div>
-                        <h3>Jane Doe</h3>
-                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient monte nascetur ultricies vehicula. </p>
+                        <h3></h3>
+                        <p> </p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="col-wrapper">
                         <div class="icon-wrapper">
-                            <img src="/img/chefs/2.jpg">
                         </div>
-                        <h3>Anton Mosimann</h3>
-                        <p>Curabitur blandit matti tempus porttitor. Donec id elit non mi porta ut gravida at eget metus. Consectetur adipiscing elit ultricies vehicula.</p>
+                        <h3></h3>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -466,6 +323,296 @@
         </div>
         <!-- /.container --> 
     </div><!-- /#chefs -->
+
+
+
+
+
+
+
+
+
+    <div id="food-menu" class="light-wrapper">
+        <section class="ss-style-top"></section>
+        <div class="container inner">
+
+            <h2 class="section-title text-center">Our Burgers</h2>
+            <p class="lead main text-center"></p>
+
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/comingsoon.jpg" alt="Hot Drinks"></div>
+                    <div class="menu-titles"><h1 class="">The Original on Grilled Sourdough</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Grilled Sourdough</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Lettuce</li>
+                            <li>Cheese</li>
+                            <li>Patty</li>
+                            <li>Grilled Sourdough</li>
+                        </ul>
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="1">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/cilantroverde.JPG" alt="Smoothies"></div>
+                    <div class="menu-titles"><h1 class="">Cilantro with Salsa Verde on a Classic Bun</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Salsa Verde</li>
+                            <li>Classic Bun</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Onions</li>
+                            <li>Cilantro</li>
+                            <li>Lettuce</li>
+                            <li>Cheese</li>
+                            <li>Real Beef Patty</li>
+                            <li>Classic Bun</li>
+                        </ul>
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="4">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/eggtot.JPG" alt="Ice Drinks"></div>
+                    <div class="menu-titles"><h1 class="">The Egg Breakfast Burger with Tator Tots</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Your Choice of Salsa</li>
+                            <li>Grilled Sourdough</li>
+                            <li>Ketchup</li>
+                            <li>Tomatoes</li>
+                            <li>Cilantro</li>
+                            <li>Lettuce</li>
+                            <li>Egg Omelette With Cheese</li>
+                            <li>Beef Patty</li>
+                            <li>Tater Tots</li>
+                            <li>Avocados</li>
+                            <li>Grilled Sourdough</li>
+                        </ul>
+                            <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="8">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/comingsoon.jpg" alt="Deserts"></div>
+                    <div class="menu-titles"><h1 class="">Avocados on Grilled Sourdough</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Grilled Sourdough</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Onions</li>
+                            <li>Avocados </li>
+                            <li>Lettuce</li>
+                            <li>Cheese</li>
+                            <li>Patty</li>
+                            <li>Grilled Sourdough</li>
+                        </ul>
+                            <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="7">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                    <button_to
+                </div>
+            </div>
+            
+        </div>
+        <!-- /.container -->
+        <section class="ss-style-bottom"></section>
+    </div><!--/#food-menu-->
+
+  <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/comingsoonclassic.jpg" alt="Hot Drinks"></div>
+                    <div class="menu-titles"><h1 class="">The Original on Grilled Classic Bun</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Grilled Classic</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Onions</li>
+                            <li>Lettuce</li>
+                            <li>Cheese</li>
+                            <li>Patty</li>
+                            <li>Grilled Classic Bun</li>
+                        </ul>
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="2">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/comingsoon.jpg" alt="Smoothies"></div>
+                    <div class="menu-titles"><h1 class="">Salsa Verde on Grilled Sourdough</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Salsa Verde</li>
+                            <li>Grilled Sourdough Bun</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Onions</li>
+                            <li>Lettuce</li>
+                            <li>Cheese</li>
+                            <li>Real Beef Patty</li>
+                            <li>Classic Bun</li>
+                        </ul>
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="3">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/comingsoon.jpg" alt="Ice Drinks"></div>
+                    <div class="menu-titles"><h1 class="">Chipotle on Grilled Sourdough</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Chipotle Sauce</li>
+                            <li>Grilled Sourdough</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Onions
+                            <li>Lettuce</li>
+                            <li>Beef Patty</li>
+                            <li>Grilled Sourdough</li>
+                        </ul>
+                            <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="5">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="menu-images "><img src="/img/comingsoon.jpg" alt="Deserts"></div>
+                    <div class="menu-titles"><h1 class="">Red Tomatillo Salsa on Grilled Sourdough</h1></div>
+                    <div class="menu-items ">
+                        <ul>
+                            <li>Red Tomatillo Salsa</li>
+                            <li>Grilled Sourdough</li>
+                            <li>Ketchup & Mayo</li>
+                            <li>Tomatoes</li>
+                            <li>Onions</li>
+                            <li>Lettuce</li>
+                            <li>Cheese</li>
+                            <li>Patty</li>
+                            <li>Grilled Sourdough</li>
+                        </ul>
+                            <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="6">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                    </div>
+                    <button_to
+                </div>
+            </div>
+            
+        </div>
+        <!-- /.container -->
+        <section class="ss-style-bottom"></section>
+    </div><!--/#food-menu-->
+
+ 
+    <div id="special-offser" class="parallax pricing">
+        <div class="container inner">
+            <h2 class="section-title text-center">Order Here!</h2>
+            <p class="lead main text-center"></p>
+
+                <div class="row">
+                    <div class="pricing-item">
+
+
+                        <div id="interactivemenu">
+                            <div v-for="button in buttons" v-bind:key="button.id">
+                                <transition name="slide-right">
+                                    <h9 v-if="button.visible" v-on:click="clickButton(button)"> {{button.name}} </h9>
+                                </transition>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <footer id="footer" class="dark-wrapper">

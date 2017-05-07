@@ -17,11 +17,11 @@ class OrdersController < ApplicationController
 		# redirect_to "/orders/#{order.id}"
 
 	def create
+		
 		@final_products = OrderItem.where(user_id: current_user.id,
 										  status: "Bagged")
 		subtotal = 0
 		@final_products.each do |product|
-			product.menu_item_type == "Burger"
 		 	subtotal += (product.quantity * product.menu_item.price)
 		 	puts "*" * 100
 		 	puts subtotal + 1
@@ -43,11 +43,11 @@ class OrdersController < ApplicationController
 			product.order_id = order.id
 			product.save
 		end	
-		redirect_to "/orders/#{order.id}"
+		redirect_to "/rabbitsburgers#chefs"
 	end
 
 	def show
-		@order = Order.find_by(id: params[:id])
+		@order = Order.find_by(id: params[:id]
 		@order.order_items
 	end
 end
