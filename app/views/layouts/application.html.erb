@@ -163,9 +163,20 @@
         <!-- /.container --> 
     </div><!-- #facts -->
 
+
     <div id="reservation" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
+
+        <div class="container">
+        <% flash.each do |name, messege| %>
+            <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <%= messege %>
+            </div>
+        <% end %>
+        </div>
+
             <h2 class="section-title text-center">Sign Up Here!</h2>
             <p class="lead main text-center"></p>
             <div class="row">
@@ -265,14 +276,6 @@
 
     <div id="chefs" class="parallax pricing">
         <div class="container inner">
-        <div class="container">
-        <% flash.each do |name, messege| %>
-            <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <%= messege %>
-            </div>
-        <% end %>
-        </div>
             <% if current_user %>
                 <% if final_products.length != 0%>
                     <h2 class="section-title text-center">Your Bag</h2>
@@ -353,6 +356,7 @@
                             <li>Patty</li>
                             <li>Grilled Sourdough</li>
                         </ul>
+                            <% if current_user %>
                                 <a class="btn btn-danger">
                                     <%= form_tag "/orderitems", method: :post do %>
                                         <input type="hidden" name="menu_item_id" value="1">
@@ -364,6 +368,7 @@
                                         </div>
                                     <% end %>
                                 </a>
+                            <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
@@ -382,6 +387,7 @@
                             <li>Real Beef Patty</li>
                             <li>Classic Bun</li>
                         </ul>
+                            <% if current_user %>
                                 <a class="btn btn-danger">
                                     <%= form_tag "/orderitems", method: :post do %>
                                         <input type="hidden" name="menu_item_id" value="4">
@@ -393,6 +399,7 @@
                                         </div>
                                     <% end %>
                                 </a>
+                            <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
@@ -412,17 +419,19 @@
                             <li>Avocados</li>
                             <li>Grilled Sourdough</li>
                         </ul>
-                            <a class="btn btn-danger">
-                                    <%= form_tag "/orderitems", method: :post do %>
-                                        <input type="hidden" name="menu_item_id" value="8">
-                                        <input type="hidden" name="menu_item_type" value="Burger">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" value="Bagged">
-                                        <div class="addbutton">
-                                            <input type="submit" value="Add to Order">
-                                        </div>
-                                    <% end %>
-                                </a>
+                            <% if current_user %>
+                                <a class="btn btn-danger">
+                                        <%= form_tag "/orderitems", method: :post do %>
+                                            <input type="hidden" name="menu_item_id" value="8">
+                                            <input type="hidden" name="menu_item_type" value="Burger">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" value="Bagged">
+                                            <div class="addbutton">
+                                                <input type="submit" value="Add to Order">
+                                            </div>
+                                        <% end %>
+                                    </a>
+                            <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
@@ -440,7 +449,8 @@
                             <li>Patty</li>
                             <li>Grilled Sourdough</li>
                         </ul>
-                            <a class="btn btn-danger">
+                            <% if current_user %>
+                                <a class="btn btn-danger">
                                     <%= form_tag "/orderitems", method: :post do %>
                                         <input type="hidden" name="menu_item_id" value="7">
                                         <input type="hidden" name="menu_item_type" value="Burger">
@@ -451,6 +461,7 @@
                                         </div>
                                     <% end %>
                                 </a>
+                            <% end %>
                     </div>
                     <button_to
                 </div>
@@ -476,17 +487,19 @@
                             <li>Patty</li>
                             <li>Grilled Classic Bun</li>
                         </ul>
-                                <a class="btn btn-danger">
-                                    <%= form_tag "/orderitems", method: :post do %>
-                                        <input type="hidden" name="menu_item_id" value="2">
-                                        <input type="hidden" name="menu_item_type" value="Burger">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" value="Bagged">
-                                        <div class="addbutton">
-                                            <input type="submit" value="Add to Order">
-                                        </div>
-                                    <% end %>
-                                </a>
+                                <% if current_user %>
+                                    <a class="btn btn-danger">
+                                        <%= form_tag "/orderitems", method: :post do %>
+                                            <input type="hidden" name="menu_item_id" value="2">
+                                            <input type="hidden" name="menu_item_type" value="Burger">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" value="Bagged">
+                                            <div class="addbutton">
+                                                <input type="submit" value="Add to Order">
+                                            </div>
+                                        <% end %>
+                                    </a>
+                                <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
@@ -504,17 +517,19 @@
                             <li>Real Beef Patty</li>
                             <li>Classic Bun</li>
                         </ul>
-                                <a class="btn btn-danger">
-                                    <%= form_tag "/orderitems", method: :post do %>
-                                        <input type="hidden" name="menu_item_id" value="3">
-                                        <input type="hidden" name="menu_item_type" value="Burger">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" value="Bagged">
-                                        <div class="addbutton">
-                                            <input type="submit" value="Add to Order">
-                                        </div>
-                                    <% end %>
-                                </a>
+                                <% if current_user %>
+                                    <a class="btn btn-danger">
+                                        <%= form_tag "/orderitems", method: :post do %>
+                                            <input type="hidden" name="menu_item_id" value="3">
+                                            <input type="hidden" name="menu_item_type" value="Burger">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" value="Bagged">
+                                            <div class="addbutton">
+                                                <input type="submit" value="Add to Order">
+                                            </div>
+                                        <% end %>
+                                    </a>
+                                <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
@@ -531,17 +546,19 @@
                             <li>Beef Patty</li>
                             <li>Grilled Sourdough</li>
                         </ul>
-                            <a class="btn btn-danger">
-                                    <%= form_tag "/orderitems", method: :post do %>
-                                        <input type="hidden" name="menu_item_id" value="5">
-                                        <input type="hidden" name="menu_item_type" value="Burger">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" value="Bagged">
-                                        <div class="addbutton">
-                                            <input type="submit" value="Add to Order">
-                                        </div>
-                                    <% end %>
-                                </a>
+                            <% if current_user %>
+                                <a class="btn btn-danger">
+                                        <%= form_tag "/orderitems", method: :post do %>
+                                            <input type="hidden" name="menu_item_id" value="5">
+                                            <input type="hidden" name="menu_item_type" value="Burger">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" value="Bagged">
+                                            <div class="addbutton">
+                                                <input type="submit" value="Add to Order">
+                                            </div>
+                                        <% end %>
+                                    </a>
+                            <% end %>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
@@ -559,19 +576,20 @@
                             <li>Patty</li>
                             <li>Grilled Sourdough</li>
                         </ul>
-                            <a class="btn btn-danger">
-                                    <%= form_tag "/orderitems", method: :post do %>
-                                        <input type="hidden" name="menu_item_id" value="6">
-                                        <input type="hidden" name="menu_item_type" value="Burger">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" value="Bagged">
-                                        <div class="addbutton">
-                                            <input type="submit" value="Add to Order">
-                                        </div>
-                                    <% end %>
-                                </a>
+                            <% if current_user %>
+                                <a class="btn btn-danger">
+                                        <%= form_tag "/orderitems", method: :post do %>
+                                            <input type="hidden" name="menu_item_id" value="6">
+                                            <input type="hidden" name="menu_item_type" value="Burger">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" value="Bagged">
+                                            <div class="addbutton">
+                                                <input type="submit" value="Add to Order">
+                                            </div>
+                                        <% end %>
+                                    </a>
+                            <% end %>
                     </div>
-                    <button_to
                 </div>
             </div>
             
@@ -580,27 +598,34 @@
         <section class="ss-style-bottom"></section>
     </div><!--/#food-menu-->
 
- 
-    <div id="special-offser" class="parallax pricing">
-        <div class="container inner">
-            <h2 class="section-title text-center">Order Here!</h2>
-            <p class="lead main text-center"></p>
+    <% if current_user %>
+        <div id="special-offser" class="parallax pricing">
+         <div class="container inner">
+             <h2 class="section-title text-center">Order Here!</h2>
+             <p class="lead main text-center"></p>  
 
-                <div class="row">
-                    <div class="pricing-item">
+                    <div class="row">
+                        <div class="pricing-item">
+                            <div id="interactivemenu">   
 
+                                    <h9 class="menubuttons1" v-on:click="clickButtonBurger('burger')">Burgers</h9>
+                        
 
-                        <div id="interactivemenu">
-                            <div v-for="button in buttons" v-bind:key="button.id">
-                                <transition name="slide-right">
-                                    <h9 v-if="button.visible" v-on:click="clickButton(button)"> {{button.name}} </h9>
-                                </transition>
+                                    <h9 class="menubuttons2" v-on:click="clickButtonFries('friesanddrinks')">Fries & Drinks</h9>
+                        
+
+                                    <h9 class="menubuttons3" v-on:click="clickButtonBuild('buildaburger')">Build-A-Burger</h9>
+                        
+
+                                    <h9 class="menubuttons4" v-on:click="clickButtonFinished('finished')">Finished</h9>
+                        
                             </div>
+                        </div>
                     </div>
-                </div>
-        </div>
+            </div>
     
-    </div>
+      </div>
+    <% end %>
 
 
 
