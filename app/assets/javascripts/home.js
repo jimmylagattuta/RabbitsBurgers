@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			burgers: [],
 			items: [],
 			ingredients: [],
+			bag: [],
 			buttons: [
 			{
 				name: "Burgers",
@@ -243,6 +244,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 				console.log('Working');
+			},
+
+
+
+			addBag: function(add) {
+				console.log('Working');
+				console.log(add);
+				console.log(this.bag);
+				this.bag.push(add);
+				console.log(this.bag);
 			}
 
 
