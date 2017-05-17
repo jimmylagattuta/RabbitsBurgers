@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/rabbitsburgers" => "rabbits#home"
   post "/rabbitsburgers/:id" => "rabbits#create"
   get "/rabbitsburgers" => "rabbits#home"
+  get "/rabbitsburgers/menu" => "rabbits#menu"
 
   get "/signup" => "users#new"
   post "/users" => "users#create"

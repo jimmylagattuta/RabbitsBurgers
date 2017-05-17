@@ -2,7 +2,8 @@ class RabbitsController < ApplicationController
 	#https://github.com/jimmylagattuta/RabbitsBurgers.git
 	before_action :authenticate_user!, except: [:home, :show]
 	before_action :authenticate_admin!, except: [:home, :show]
-
+	def menu		
+	end
 	def home
 		@burgers = Burger.all
 		@burgerssorted = @burgers.sort
