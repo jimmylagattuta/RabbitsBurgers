@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  root to: "rabbits#home" 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/rabbitsburgers" => "rabbits#home"
   post "/rabbitsburgers/:id" => "rabbits#create"
   get "/rabbitsburgers" => "rabbits#home"
-  get "/rabbitsburgers/menu" => "rabbits#menu"
+  get "/menu" => "rabbits#menu"
 
   get "/signup" => "users#new"
   post "/users" => "users#create"

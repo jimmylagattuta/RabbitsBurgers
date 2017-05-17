@@ -1,0 +1,195 @@
+<div id="header">
+  <div class="bg-overlay"></div>
+  <div class="center text-center">
+    <div class="banner">
+      <h1 class="">Rabbit's Burgers</h1>
+    </div>
+    <div class="subtitle"><h4>Real Beef, Real Patties, A Really Good Decision</h4></div>
+  </div>
+  <div class="bottom text-center">
+    <a id="scrollDownArrow" href="#"></a>
+  </div>
+</div>
+<!-- /#header -->
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<div id="story" class="light-wrapper">
+  <section class="ss-style-top"></section>
+  <div class="container inner">
+    <h2 class="lead main text-center"></h2>
+    <h2 class="about"> What makes us Different? </h2>
+    <h2 class="lead main text-center"></h2>
+
+    <div class="row text-center story">
+      <div class="col-sm-4">
+        <div class="col-wrapper">
+          <div class="icon-wrapper"> </div>
+          <h2>Unique Recipe's</h2>
+          <p> With a little extra lettuce, Rabbit's Burgers have a crunch in every bite. </p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-wrapper">
+          <div class="icon-wrapper"> </div>
+          <h2>Fast and Fiery</h2>
+          <p>Our burgers are cooked quickly with double sided grills, and served with your choice of salsa, from mild to wild.</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-wrapper">
+          <div class="icon-wrapper"> </div>
+          <h2>Quality all around</h2>
+          <p> Fresh vegetables, great service, and beef 85% lean and hormone free.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- /.services --> 
+  </div>
+  <!-- /.container -->
+  <section class="ss-style-bottom"></section>
+</div><!-- #story -->
+
+
+<div id="facts" class="parallax parallax2 facts">
+  <div class="container inner">
+    <div class="row text-center services-3">
+      <div class="col-sm-3">
+        <div class="col-wrapper">
+          <p></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="col-wrapper">
+          <p></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="col-wrapper">
+          <p></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="col-wrapper">
+
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container --> 
+</div><!-- #facts -->
+
+
+<div id="reservation" class="light-wrapper">
+  <section class="ss-style-top"></section>
+  <div class="container inner">
+
+    <div class="container">
+      <% flash.each do |name, messege| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= messege %>
+      </div>
+      <% end %>
+    </div>
+
+    <h2 class="section-title text-center">Sign Up Here!</h2>
+    <p class="lead main text-center"></p>
+    <div class="row">
+      <div class="col-md-6">
+        <%= form_tag "/users", method: :post do %>
+        <div class="form-group">
+          <h4>Fill the form to create your account (most fields required)</h4>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 form-group">
+            <label class="sr-only" for="first_name1">first name</label>
+            <input class="form-control hint" type="text" id="first_name1" name="first_name" placeholder="First name" required="">
+          </div>
+          <div class="col-lg-6 col-md-6 form-group">
+            <label class="sr-only" for="last_name1">last name</label>
+            <input class="form-control hint" type="text" id="last_name1" name="last_name" placeholder="Last name" required="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 form-group">
+            <label class="sr-only" for="email1">email</label>
+            <input class="form-control hint" type="email" id="email1" name="email" placeholder="Email@domain.com" required="">
+          </div>
+          <div class="col-lg-6 col-md-6 form-group">
+            <label class="sr-only" for="phone1">phone</label>
+            <input class="form-control hint" type="text" id="phone1" name="phone" placeholder="Phone" required="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 form-group">
+            <label class="sr-only" for="password">Password</label>
+            <input class="form-control hint" type="password" id="email1" name="password" placeholder="Password" required="">
+          </div>
+          <div class="col-lg-6 col-md-6 form-group">
+            <label class="sr-only" for="phone1">Password Confirmation</label>
+            <input class="form-control hint" type="password" id="phone1" name="password_confirmation" placeholder="Password confirmation" required="">
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <p>Did you know you  get a discount when ording online or with your mobile app?</p>
+          </div>
+        </div>
+        <input type="hidden" name="admin" value="false" %>
+        <input type="submit" name="Create Account" %>
+      </div>
+      <% end %>
+      <% if !current_user %>
+      <h2 class="section-title text-center">Log In Here</h2>
+      <div class="login">
+        <%= form_tag "/login", method: :post do %>
+        <div>
+          Email: <input type="text" name="email">
+        </div>
+        <br>
+        <div>
+          Password: <input type="password" name="password">
+        </div>
+        <br>
+        <input type="submit" value="Login">
+        <br>
+        <% end %>
+      </div>
+      <% end %> 
+      <div class="edit">
+        <% if current_user %>
+        <div class="edituser">
+          <h4> Edit User Information </h4>
+          <%= form_tag "/users/#{current_user.id}", method: :patch do %>
+          <div>
+            First Name: <input type="text" name="first_name" value="<%= current_user.  first_name %>"%>
+            <br>
+            Last Name: <input type="text" name="last_name" value="<%= current_user.last_name %>"%>
+            <br>
+            Email: <input type="email" name="email" value="<%= current_user.email %>"%>
+            <br>
+            <br>
+            <input type="submit" value="Edit User Info">
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+
+      </div><!-- col-md-6 -->
+
+    </div>
+    <!-- /.services --> 
+  </div>
+  <!-- /.container -->
+  <section class="ss-style-bottom"></section>
+</div><!-- #reservation -->
