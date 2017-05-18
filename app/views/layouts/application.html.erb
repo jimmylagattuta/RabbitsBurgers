@@ -62,12 +62,10 @@
 -->                
 <li><a href="#special-offser">Add to Order!</a></li>
 
-</a></li>
-<li><a href="#chefs">Bag<i class="icon-large icon-fast-food icon-white"></i>
+<li><a href="#chefs">Bag<i class="icon-large icon-fast-food icon-white"></i></a></li>
   <li><a href="#"> Welcome, <%= current_user.first_name %></a></li>
   <li><%= button_to "Logout", "/logout", method: :get %> </li>
   <% end %>                
-
 
   <!--fix for scroll spy active menu element-->
   <li style="display:none;"><a href="#header"></a></li>
@@ -79,8 +77,11 @@
 
 
 
-<%= yield %>
 
+<div id="interactivemenu">
+     
+<%= yield %>
+</div>
 
 
 <footer id="footer" class="dark-wrapper">

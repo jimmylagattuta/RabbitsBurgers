@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				// this.ingredients.push(result["ingredients"]);
 				console.log('This.ingredients below');
 				console.log(this.ingredients);
+				console.log(this.bag);
 			}.bind(this));
 
 		},
