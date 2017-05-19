@@ -1,25 +1,31 @@
-
+<nav class="floating-menu" v-if="bag.length > 0">
+      <h3> Your Bag </h3>
+      <div v-for="item in bag">
+        <p> {{item}} </p>
+        <br>
+      </div>
+</nav>
 
 <div id="chefs" class="parallax pricing">
   <div class="container inner">
     <% if current_user %>
-    <% if final_products.length != 0%>
-    <h2 class="section-title text-center">Your Bag</h2>
-    <p class="lead main text-center"></p>
-    <p class="lead main text-center">
-      <% final_products.each do |product| %>
-      <%= product.menu_item.name %>
-      <br>
-      Subtotal: $<%= product.menu_item.price %>
-      <br>
-      
+      <% if final_products.length != 0%>
+        <h2 class="section-title text-center">Your Bag</h2>
+        <p class="lead main text-center"></p>
+        <p class="lead main text-center">
+          <% final_products.each do |product| %>
+          <%= product.menu_item.name %>
+          <br>
+          Subtotal: $<%= product.menu_item.price %>
+          <br>
+          
+          <% end %>
+        </p>
+        <div class="completeorder">
+          <%= button_to "Finished", "/rabbitsburgers/orders", method: :post %>
+        </div>
+        
       <% end %>
-    </p>
-    <div class="completeorder">
-      <%= button_to "Finished", "/rabbitsburgers/orders", method: :post %>
-    </div>
-    
-    <% end %>
 
     <% end %>
     <div class="row text-center chefs">
@@ -327,12 +333,6 @@
      <p class="lead main text-center"></p>  
 
 
-        <nav class="floating-menu">
-        <h3> Your Bag </h3>
-
-
-        </nav>
-
       <div class="row">
         <div class="pricing-item">
           <h9 class="menubuttons1" v-on:click="clickButtonBurger('burger')">Burgers</h9>
@@ -366,7 +366,7 @@
                   
                   
                   
-                  <a class="btn btn-danger" v-on:click="addBag(burger.name)">Add to Order</a>
+                  <a class="btn btn-danger" v-on:click="addBag(burger)">Add to Order</a>
                   <div class="clearfix"></div>
                 </div>
                 <!--price tag-->
@@ -396,7 +396,7 @@
                   
                   
                   
-                  <a class="btn btn-danger" v-on:click="addBag(item.name)">Add to Order</a>
+                  <a class="btn btn-danger" v-on:click="addBag(item)">Add to Order</a>
                   <div class="clearfix">
                     
                   </div>
@@ -412,7 +412,7 @@
 
 
           <div v-for="item in ingredients" v-if="buttons[2].visible == false">
-            <h9> {{item.name}}</h9>
+            <h9 class="ingre" v-bind:id="'item'+item.id" v-on:click="ingredientSelect(item)"> {{item.name}}</h9>
           </div>
         </div>
 

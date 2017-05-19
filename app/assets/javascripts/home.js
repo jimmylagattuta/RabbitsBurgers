@@ -255,6 +255,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				console.log(this.bag);
 				this.bag.push(add);
 				console.log(this.bag);
+			},
+
+			ingredientSelect: function(ingredient) {
+				console.log('Working');
+				console.log('Working');
+				console.log(ingredient); 
+
+				var ingredient_id = ingredient.id
+				variable = document.querySelector('#item'+ingredient_id);
+				console.log('variable below');
+				console.log(variable);
+				variable.style.borderColor = "green";
+				variable.style.borderWidth = "thick";
+				
+
+				
+				console.log('Working');
 			}
 
 

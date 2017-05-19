@@ -11,6 +11,7 @@
     display:inline-block;
     background:#3c763d;
     padding:0px 18px;
+    margin-top:200px;
 }
 
 #header .subtitle h4 {
@@ -210,13 +211,29 @@ font-family: sans-serif;
 background: green;
 padding: 5px;
 width: 130px;
-z-index: 100;
+z-index: 1000;
 position: fixed;
+top: 100px;
+left: 20px;
+border-radius: 5px;
+border: 4px solid #5cb85c;
+
 }
 
 .floating-menu h3 {
 font-size: 1.3em;
 display: block;
 margin: 0 0.5em;
+color: white;
+text-align: center;
+text-shadow: 2px 2px #080808;
+
+}
+
+
+.floating-menu p {
+font-size: 0.9em;
+display: block;
+margin: 0 0.9em;
 color: white;
 }
