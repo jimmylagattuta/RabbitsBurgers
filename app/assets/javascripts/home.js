@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			items: [],
 			ingredients: [],
 			bag: [],
+			total: 0,
 			buttons: [
 			{
 				name: "Burgers",
@@ -255,6 +256,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				console.log(this.bag);
 				this.bag.push(add);
 				console.log(this.bag);
+				var tot = this.total;
+				var pri = add.price;
+				this.total = parseFloat(tot) + parseFloat(pri);
+				console.log(this.total);
 			},
 
 			ingredientSelect: function(ingredient) {

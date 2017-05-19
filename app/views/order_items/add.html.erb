@@ -647,3 +647,303 @@ body {
 .orderitems {
 	float: left;
 }
+
+
+
+    <div id="special-offser" class="parallax pricing">
+        <div class="container inner">
+
+            <h2 class="section-title text-center">Order Here!</h2>
+            <p class="lead main text-center"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoon.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">The Original on Grilled Sourdough</h3>
+                                
+                                <p>Grilled Sourdough, Ketchup & Mayo, Tomatoes, Onions, Lettuce, Cheese, Beef Patty, Grilled Sourdough.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="1">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$3.75</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoonclassic.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">The Original on a Classic Bun</a></h3>
+                                
+                                <p>Grilled Classic Bun, Ketchup & Mayo, Tomatoes, Lettuce, Cheese, Beef Patty, Grilled Classic Bun.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="2">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-lblue">$3.75</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+    <!--                 <div class="clearfix visible-md"></div>
+     -->                <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoon.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Salsa Verde with Grilled Sourdough</a></h3>
+                                
+                                <p>Salsa Verde, Grilled Sourdough, Ketchup & Mayo, Tomatoes, Onions, Lettuce, Cheese, Beef Patty, Grilled Sourdough.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="3">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-green">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/cilantroverde.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Cilantro with Salsa Verde on a Classic Bun</a></h3>
+                                
+                                <p>Salsa Verde, Grilled Classic Bun, Ketchup & Mayo, Tomatoes, Onions, Cilantro, Lettuce, Cheese, Beef Patty, Grilled Classic Bun.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="4">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoon.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Chipotle with Grilled Sourdough</h3>
+                                
+                                <p>Chipotle Sauce, Grilled Sourdough, Ketchup & Mayo, Tomatoes, Onions, Lettuce, Cheese, Beef Patty, Grilled Sourdough.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="5">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoon.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Red Tomatillo Salsa with Grilled Sourdough</h3>
+                                
+                                <p>Red Tomatillo Salsa, Grilled Sourdough, Ketchup & Mayo, Tomatoes, Onions, Lettuce, Cheese, Beef Patty, Grilled Sourdough.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="6">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoon.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Avocados on Grilled Sourdough</h3>
+                                
+                                <p>Grilled Sourdough, Ketchup & Mayo, Tomatoes, Onions, Avocados, Lettuce, Cheese, Beef Patty, Grilled Sourdough.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="7">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/eggtot.JPG">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Egg Breakfast Burger with Tater Tots</h3>
+                       
+                                <p>Your Choice of Salsa, Grilled Sourdough, Ketchup, Tomatoes, Onions, Cilantro, Lettuce, Egg Omelette with Cheese, Beef Patty, Tater Tots, Avocados, Grilled Sourdough.</p>
+                                
+                                <a class="btn btn-danger">
+                                    <%= form_tag "/orderitems", method: :post do %>
+                                        <input type="hidden" name="menu_item_id" value="8">
+                                        <input type="hidden" name="menu_item_type" value="Burger">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" value="Bagged">
+                                        <div class="addbutton">
+                                            <input type="submit" value="Add to Order">
+                                        </div>
+                                    <% end %>
+                                </a>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="pricing-item">
+                            
+                            <img class="img-responsive img-thumbnail" src="/img/comingsoon.jpg">
+                            
+                            <div class="pricing-item-details">
+                                
+                                <h3><a href="#">Build-A-Burger</h3>
+                                
+                                <p>All Ingredients.</p>
+                                
+                                <a class="btn btn-danger" href="#">Add to Order</a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--price tag-->
+                            <span class="hot-tag br-red">$4.50</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        <!-- /.container --> 
+    </div><!-- /#special-offser -->
+
+
+
+
