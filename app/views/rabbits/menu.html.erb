@@ -1,11 +1,15 @@
 <nav class="floating-menu" v-if="bag.length > 0">
-      <h3> Your Bag </h3>
+      <h3> Your Bag <i class="icon-large icon-fast-food icon-white"></i> </h3>
       <div v-for="item in bag">
         <p class="itemname"> {{item.name}} </p>
         <p> ${{item.price}}0 </p>
       </div>
-      <p class="itemnametwo"> Total: ${{total}} </p>
-</nav>
+      <div class="itemnametwo"> Total: ${{total}} </div>
+      <br>
+      
+      <i class="icon-large icon-hand-right" v-on:click="checkOut()">Checkout</i>
+<!--       <div v-for="items in bag">
+ --></nav>
 
 <div id="chefs" class="parallax pricing">
   <div class="container inner">
@@ -530,17 +534,17 @@
 
       <div class="row">
         <div class="pricing-item">
-          <h9 class="menubuttons1" v-on:click="clickButtonBurger('burger')">Burgers</h9>
+          <h5 class="menubuttons1" v-on:click="clickButtonBurger('burger')">Burgers</h5>
           
 
-          <h9 class="menubuttons2" v-on:click="clickButtonFries('friesanddrinks')">Fries & Drinks</h9>
+          <h5 class="menubuttons2" v-on:click="clickButtonFries('friesanddrinks')">Fries & Drinks</h5>
           
 
-          <h9 class="menubuttons3" v-on:click="clickButtonBuild('buildaburger')">Build-A-Burger</h9>
+          <h5 class="menubuttons3" v-on:click="clickButtonBuild('buildaburger')">Build-A-Burger</h5>
 
 
-          <h9 class="menubuttons4" 
-          v-on:click="clickButtonFinished('finished')">Finished</h9>
+          <h5 class="menubuttons4" 
+          v-on:click="clickButtonFinished('finished')">Finished</h5>
 
 
 
@@ -608,7 +612,7 @@
 
             <br><h4 class="clicktoadd" v-if="buttons[2].visible == false"> Click Ingredient To Add </h4>
           <div v-for="item in ingredients" v-if="buttons[2].visible == false">
-            <h9 class="ingre" v-bind:id="'item'+item.id" v-on:click="ingredientSelect(item)"> {{item.name}}</h9>
+            <h5 class="ingre" v-bind:id="'item'+item.id" v-on:click="ingredientSelect(item)"> {{item.name}}</h5>
           </div>
         </div>
 

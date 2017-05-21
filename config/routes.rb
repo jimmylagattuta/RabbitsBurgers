@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   post "/rabbitsburgers/:id/images" => "images#create"
 
   get "/api/menu" => "apidatas#index"
+  get "/checkout" => "rabbits#checkout"
 
 end

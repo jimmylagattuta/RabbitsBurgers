@@ -1,7 +1,7 @@
 class RabbitsController < ApplicationController
 	#https://github.com/jimmylagattuta/RabbitsBurgers.git
-	before_action :authenticate_user!, except: [:home, :show]
-	before_action :authenticate_admin!, except: [:home, :show]
+	before_action :authenticate_user!, except: [:home, :show, :menu]
+	before_action :authenticate_admin!, except: [:home, :show, :menu]
 	def menu		
 	end
 	def home
@@ -45,5 +45,8 @@ class RabbitsController < ApplicationController
 	def show
 		burger_id = params[:id]
 		@burger = Burger.find_by(id: burger_id)
+	end
+
+	def checkout
 	end
 end

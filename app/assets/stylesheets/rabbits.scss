@@ -154,7 +154,7 @@
     color: black;
 }
 
-h9 {
+h5 {
     font-size: 150%;
     color: #fff;
     border: 2px solid #3c763d;
@@ -163,6 +163,7 @@ h9 {
     display: inline-block;
     margin: 8px;
     text-align: center;
+    padding: 3px;
 }
 
 // /* Vue.js fade */
@@ -255,9 +256,25 @@ text-decoration: underline dotted;
 
 .itemnametwo {
 text-decoration: overline;
+font-size: 150%;
+text-align:left;
+display: block;
+margin: 0 0.9em;
+color: white;
 }
 
 
 .clicktoadd {
 padding-left: 48px;
+}
+
+.icon-large {
+    padding-left: 40px;
+    font-size: 180%;
+    font-weight: bold;
+    color: black;
+}
+
+.containercheckout {
+    margin: 100px;
 }

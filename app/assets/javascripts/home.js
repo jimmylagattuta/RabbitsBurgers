@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			ingredients: [],
 			bag: [],
 			total: 0,
+			orderitem: [],
+			menu_item_id: 0,
+			menu_item_type: '',
+			status: '',
+			newBurger: [],
 			buttons: [
 			{
 				name: "Burgers",
@@ -277,6 +282,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				
 				console.log('Working');
+				this.newBurger.push(ingredient);
+				console.log('newBurger below');
+				console.log(this.newBurger);
+			},
+
+			checkOut: function() {
+				console.log('Working');
+				console.log(this.bag[0]);
+				if (this.bag[0].burger_type_id) {
+					var params = {
+						menu_item_id: this.bag[0].id,
+						menu_item_type: this.bag[0].burger_type_id,
+						quantity: 1,
+						status: 'Bagged'
+					};
+				} else if (this.bag[0].item_type_id) {
+					var params = {
+						menu_item_id: this.bag[0].id,
+						menu_item_type: this.bag[0].item_type_id,
+						quantity: 1,
+						status: 'Bagged'
+					};
+				}
+				console.log('params below');
+				console.log(params);
+
+				$.post('http://localhost:3000/api/menu.json', params, function(result) {
+
+
+				}.bind(this))
 			}
 
 
