@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			ingredients: [],
 			bag: [],
 			total: 0,
+			orderdetails: [],
+			order: [],
+			ordercontents: [],
+			finalorder: [],
 			orderitem: [],
 			menu_item_id: 0,
 			menu_item_type: '',
@@ -29,7 +33,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			{
 				name: "Finished",
 				visible: true
-			}]	
+			}],
+			build: [
+			{	
+				name: "Build A Burger",
+				ready: false
+			},
+			{
+				name: "Reset",
+				ready: false
+			}]
 		},
 		mounted: function() {
 			console.log('Working');
@@ -261,9 +274,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				console.log(this.bag);
 				this.bag.push(add);
 				console.log(this.bag);
-				var tot = this.total;
-				var pri = add.price;
-				this.total = parseFloat(tot) + parseFloat(pri);
+				var tot = parseFloat(this.total);
+				var pri = parseFloat(add.price);
+				this.total = tot + pri;
 				console.log(this.total);
 			},
 
@@ -285,33 +298,88 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				this.newBurger.push(ingredient);
 				console.log('newBurger below');
 				console.log(this.newBurger);
+
+
+		
+			},
+
+			sendIngredients: function() {
+				console.log('this.newBurger below');
+				console.log(this.newBurger);
+				var burger = JSON.stringify(this.newBurger);
+				var burger_to_send = {
+					newBurger: burger 
+				}
+				console.log('burgertosend below ');
+				console.log(burger_to_send);
+				console.log(this.newBurger);
+				$.post('http://localhost:3000/api/buildburger.json', burger_to_send, function(result) {
+					console.log('result below');
+					console.log(result);
+					this.bag.push(result);
+					this.total = this.total + result.price;
+
+				}.bind(this))				
 			},
 
 			checkOut: function() {
-				console.log('Working');
-				console.log(this.bag[0]);
-				if (this.bag[0].burger_type_id) {
-					var params = {
-						menu_item_id: this.bag[0].id,
-						menu_item_type: this.bag[0].burger_type_id,
-						quantity: 1,
-						status: 'Bagged'
-					};
-				} else if (this.bag[0].item_type_id) {
-					var params = {
-						menu_item_id: this.bag[0].id,
-						menu_item_type: this.bag[0].item_type_id,
-						quantity: 1,
-						status: 'Bagged'
-					};
+
+				// console.log('Working');
+				// console.log(this.bag[0]);
+				// if (this.bag[0].burger_type_id) {
+				// 	var params = {
+				// 		menu_item_id: this.bag[0].id,
+				// 		menu_item_type: this.bag[0].burger_type_id,
+				// 		quantity: 1,
+				// 		status: 'Bagged'
+				// 	};
+				// } else if (this.bag[0].item_type_id) {
+				// 	var params = {
+				// 		menu_item_id: this.bag[0].id,
+				// 		menu_item_type: this.bag[0].item_type_id,
+				// 		quantity: 1,
+				// 		status: 'Bagged'
+				// 	};
+				// }
+				// console.log('params below');
+				// console.log(params);
+				// console.log(this.bag);
+				var identity = document.querySelector('.userid');
+				var iden = identity.innerHTML;
+				console.log(iden);
+				var bag_json = JSON.stringify(this.bag);
+				// console.log("this bag in stringified json:")
+				// console.log(bag_json);
+				var json_to_send = {
+					bag: bag_json,
+					user_id: iden
 				}
-				console.log('params below');
-				console.log(params);
+				$.post('http://localhost:3000/api/create_order.json', json_to_send, function(result) {
+					this.bag = [];
+					this.orderdetails.push(result['orderitems']);
+					for (var i = 0; i <this.orderdetails.length; i++) {
+						console.log(this.orderdetails[i]);
+						this.finalorder.push(this.orderdetails[i]);
+						console.log(this.finalorder);
+					}
+					console.log('total below');
+					console.log(this.total);
 
-				$.post('http://localhost:3000/api/menu.json', params, function(result) {
-
-
+					window.location = "http://localhost:3000/api/checkout"
 				}.bind(this))
+			},
+			orderPost: function() {
+				this.orderdetails = [];
+				var identity = document.querySelector('.userid');
+				var iden = identity.innerHTML;
+				var send_to_final = {
+					subtotal: parseFloat(this.total),
+					user_id: iden
+				}
+				$.post('http://localhost:3000/api/finalorder.json', send_to_final, function(result) {
+					console.log(result);
+
+				})
 			}
 
 

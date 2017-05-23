@@ -1,3 +1,44 @@
+<nav class="floating-menu" v-if="bag.length > 0">
+      <h3> Your Bag <i class="icon-large icon-fast-food icon-white"></i> </h3>
+      <div v-for="item in bag">
+        <p class="itemname"> {{item.name}} </p>
+        <p> </p>
+      </div>
+      <div class="itemnametwo"></div>
+      <br>
+      <div class="bagcheck">
+        <i class="icon-large icon-hand-right" v-on:click="checkOut()">Checkout</i>
+      </div>
+<!--       <div v-for="items in bag">
+ --></nav>
+ <div class="userid"><%= current_user.id %></div>
+
+<nav class="finishorder" v-if="orderdetails.length > 0">
+  <h3> Finalize  </h3>
+  <div v-for="orderitems in orderdetails">
+    <p class="ordeats"> Item: {{orderitem.menu_item_type}} </p>
+    <p class="ordeats"> Subtotal: ${{orderitem.subtotal}} </p>
+    <p class="ordeats"> Tax: ${{@tax}} </p>
+    <p class="ordeats"> Total: ${{@total}} </p>
+
+    <p class="finalizer" v-on:click="orderPost()">Finalize</p>
+</nav>
+
+<div id="chefs" class="parallax pricing">
+  <div class="container inner">
+    
+    <div class="row text-center chefs">
+      <div class="col-sm-4">
+        <div class="col-wrapper">
+          <div class="icon-wrapper">
+          </div>
+        </div>
+      </d
+
+
+
+
+
 div class="home_text">
  	<% if !current_user %>
 		<nav class="navbar navbar-default navbar-fixed-top">

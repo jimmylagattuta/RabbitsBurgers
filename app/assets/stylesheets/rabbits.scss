@@ -199,6 +199,7 @@ h5 {
 // }
 
 .parallax {
+    background:url(../img/darkwood.jpg) fixed no-repeat center center;
     -moz-background-size:cover;
     background-size:cover;
     position:relative;
@@ -222,7 +223,7 @@ h5 {
 font-family: sans-serif;
 background: green;
 padding: 5px;
-width: 200px;
+width: 280px;
 z-index: 1000;
 position: fixed;
 top: 100px;
@@ -256,7 +257,7 @@ text-decoration: underline dotted;
 
 .itemnametwo {
 text-decoration: overline;
-font-size: 150%;
+font-size: 120%;
 text-align:left;
 display: block;
 margin: 0 0.9em;
@@ -277,4 +278,72 @@ padding-left: 48px;
 
 .containercheckout {
     margin: 100px;
+}
+
+.bagcheck {
+    font-size: 80%;
+    color: #fff;
+    border: 3px solid #ffffff;
+    width: 180px;
+    height: 245%;
+    display: inline-block;
+    margin: 8px;
+    text-align: left;
+    padding-right:15px;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.finishorder {
+font-family: sans-serif;
+background: green;
+padding: 5px;
+width: 200px;
+z-index: 1000;
+position: fixed;
+top: 100px;
+left: 20px;
+border-radius: 5px;
+border: 4px solid #5cb85c;
+
+}
+
+.finishorder h3 {
+font-size: 1.3em;
+display: block;
+margin: 0 0.5em;
+color: white;
+text-align: center;
+text-shadow: 2px 2px #080808;
+
+}
+
+
+.finishorder p {
+font-size: 0.9em;
+display: block;
+margin: 0 0.9em;
+color: white;
+width: 200px;
+}
+
+h6 {
+border: 8px solid rgba(138, 109, 59, 0.54);
+margin: 20px;
+padding: 5px;
+font-size: x-large;
+text-align: center;
+}
+
+.buildburgerapi {
+    float:center;
+    font-size: 250%;
+    color: #fff;
+    border: 2px solid #3c763d;
+    width: 250px;
+    height: 225%;
+    display: inline-block;
+    margin: 8px;
+    text-align: center;
+    padding: 3px;
 }

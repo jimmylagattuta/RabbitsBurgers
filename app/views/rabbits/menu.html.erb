@@ -2,37 +2,32 @@
       <h3> Your Bag <i class="icon-large icon-fast-food icon-white"></i> </h3>
       <div v-for="item in bag">
         <p class="itemname"> {{item.name}} </p>
-        <p> ${{item.price}}0 </p>
+        <p class="itemname"> ${{item.price}}0 </p>
       </div>
-      <div class="itemnametwo"> Total: ${{total}} </div>
+        <div class="itemnametwo">Total: ${{total}} </div>
       <br>
-      
-      <i class="icon-large icon-hand-right" v-on:click="checkOut()">Checkout</i>
+      <div class="bagcheck">
+
+        <i class="icon-large icon-hand-right" v-on:click="checkOut()">Checkout</i>
+      </div>
 <!--       <div v-for="items in bag">
  --></nav>
+ <div class="userid"><%= current_user.id %></div>
+
+<nav class="finishorder" v-if="orderdetails.length > 0">
+  <h3> Finalize </h3>
+  <div v-for="item in finalorder">
+    <p class="itemname"> {{item}} </p>
+<!--     <p class="itemname"> {{item.quantity}} </p>
+    <p class="itemname"> {{item.status}} </p>
+ -->
+  </div>
+      <h6 class="finalize" v-on:click="orderPost()">Finalize</h6>
+</nav>
 
 <div id="chefs" class="parallax pricing">
   <div class="container inner">
-    <% if current_user %>
-      <% if final_products.length != 0%>
-        <h2 class="section-title text-center">Your Bag</h2>
-        <p class="lead main text-center"></p>
-        <p class="lead main text-center">
-          <% final_products.each do |product| %>
-          <%= product.menu_item.name %>
-          <br>
-          Subtotal: $<%= product.menu_item.price %>
-          <br>
-          
-          <% end %>
-        </p>
-        <div class="completeorder">
-          <%= button_to "Finished", "/rabbitsburgers/orders", method: :post %>
-        </div>
-        
-      <% end %>
-
-    <% end %>
+    
     <div class="row text-center chefs">
       <div class="col-sm-4">
         <div class="col-wrapper">
@@ -613,6 +608,9 @@
             <br><h4 class="clicktoadd" v-if="buttons[2].visible == false"> Click Ingredient To Add </h4>
           <div v-for="item in ingredients" v-if="buttons[2].visible == false">
             <h5 class="ingre" v-bind:id="'item'+item.id" v-on:click="ingredientSelect(item)"> {{item.name}}</h5>
+          </div>
+            <div class="buildburgerapi" v-if="buttons[2].visible == false" v-on:click="sendIngredients()"> Build The Burger </div>
+          <div class="container">
           </div>
         </div>
 

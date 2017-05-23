@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   post "/rabbitsburgers/:id/images" => "images#create"
 
   get "/api/menu" => "apidatas#index"
-  get "/checkout" => "rabbits#checkout"
+  post "/api/create_order" => "apidatas#create"
+  post "/api/finalorder" => "apidatas#checkout"
+  get "/api/checkout" => "apidatas#finish"
+  post "/api/buildburger" => "apidatas#buildburger"
+
+  resources :charges
 
 end
