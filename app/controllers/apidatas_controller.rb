@@ -121,6 +121,11 @@ class ApidatasController < ApplicationController
 	def finish
 		@orderitems = OrderItem.where(user_id: current_user.id,
 									   status:"Bagged")
+		@total = 0
+
+		@orderitems.each do |orderitem|
+			@total += orderitem.menu_item.price
+		end
 
 	end
 
@@ -162,8 +167,8 @@ class ApidatasController < ApplicationController
 	end
 
 	# STRIPE API
-	# def new
-	# end
+	def new
+	end
 
 	# def create
  #  	# Amount in cents

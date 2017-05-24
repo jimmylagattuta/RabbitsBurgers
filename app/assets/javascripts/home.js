@@ -229,8 +229,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				console.log(finished); 
 				// button.visible = !button.visible;
 				variable = document.querySelector('.menubuttons4');
-				variable.style.borderColor = "green";
-				variable.style.borderWidth = "thick";
+				// variable.style.borderColor = "green";
+				// variable.style.borderWidth = "thick";
 
 				if (this.buttons[3].visible) {
 					// other = document.querySelector('.menubuttons1');
@@ -244,6 +244,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					// others.style.borderColor = "black";
 					// others2.style.borderColor = "black";
 					this.buttons[3].visible = false;
+					variable.innerHTML = "Empty Bag";
 				} else if (!this.buttons[3].visible) {
 					variable = document.querySelector('.menubuttons4');
 					variable.style.borderColor = "";
@@ -258,7 +259,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					// other.style.borderColor = "";
 					// others.style.borderColor = "";
 					// others2.style.borderColor = "";
-					this.buttons[3].visible = true;	
+					this.buttons[3].visible = true;
+				this.bag = [],
+				variable.innerHTML = "Your Bag is Empty";
 				}
 
 
@@ -278,6 +281,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				var pri = parseFloat(add.price);
 				this.total = tot + pri;
 				console.log(this.total);
+				variable1 = document.querySelector('.menubuttons1');
+				console.log('variable below');
+				console.log(variable1);
+				variable1.style.borderColor = "";
+				variable1.style.borderWidth = "";
+				variable2 = document.querySelector('.menubuttons2');
+				console.log('variable below');
+				console.log(variable2);
+				variable2.style.borderColor = "";
+				variable2.style.borderWidth = "";
+				variable3 = document.querySelector('.menubuttons3');
+				console.log('variable below');
+				console.log(variable3);
+				variable3.style.borderColor = "";
+				variable3.style.borderWidth = "";
+				variable4 = document.querySelector('.menubuttons4');
+				console.log('variable below');
+				console.log(variable4);
+				variable4.style.borderColor = "";
+				variable4.style.borderWidth = "";
+				this.buttons[0].visible = true;
+				this.buttons[1].visible = true;
+				this.buttons[2].visible = true;
+				this.buttons[3].visible = true;
 			},
 
 			ingredientSelect: function(ingredient) {
@@ -318,7 +345,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					console.log(result);
 					this.bag.push(result);
 					this.total = this.total + result.price;
-
+					this.buttons[2].visible = true;
+				variable = document.querySelector('.menubuttons3');
+				console.log('variable below');
+				console.log(variable);
+				variable.style.borderColor = "";
+				variable.style.borderWidth = "";
 				}.bind(this))				
 			},
 

@@ -1,27 +1,27 @@
-<h1> Finished </h1>
-<div class="containercheckout">
-	<h1> Checkout Here </h1>
+<div class="checkoutbackground">
+	<div class="containercheckout">
+	<h1> Final Step </h1>
 	<br>
 	<p><% @orderitems.each do |item| %>
-			<%= item.menu_item.name %><br>
-			$<%= item.menu_item.price %><br>
+			Type: <%= item.menu_item_type %><br>
+			Quantity: <%= item.quantity %><br>
 		<% end %>
 	</p>
 	<h3>Your Total: $<%= @total %> </h3>
 
 	<br>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+
+	<form action="/your-server-side-code" method="POST">
+	  <script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_L1LZtM3Cu1haNRvm3imSoZfu"
+	    data-amount="999"
+	    data-name="Demo Site"
+	    data-description="Widget"
+	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+	    data-locale="auto">
+	  </script>
+	</form>
+	</div>
 </div>
-
-<script src="https://checkout.stripe.com/checkout.js"></script>
-
-<form action="/your-server-side-code" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_L1LZtM3Cu1haNRvm3imSoZfu"
-    data-amount="999"
-    data-name="Demo Site"
-    data-description="Widget"
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto">
-  </script>
-</form>

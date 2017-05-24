@@ -2,7 +2,7 @@
 	<h1> Checkout Here </h1>
 	<br>
 	<p><% @orderitems.each do |item| %>
-			<%= item.menu_item.name %><br>
+			<%= item.menu_item_type.name %><br>
 			$<%= item.menu_item.price %><br>
 		<% end %>
 	</p>
@@ -13,7 +13,7 @@
 	 	<h1> Checkout Here </h1>
 	 	<br>
 	 	<p><% @orderitems.each do |item| %>
-	 			<%= item.menu_item.n a m e %><br>
+	 			<%= item.menu_item_type.name %><br>
 	 			$<%= item.menu_item.price %><br>
 	 		 <% end %>
 	 	</p>
