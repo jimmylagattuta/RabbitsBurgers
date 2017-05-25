@@ -47,15 +47,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		mounted: function() {
 			console.log('Working');
 			$.get('http://localhost:3000/api/menu.json', function(result) {
-				console.log('This.burgers below');
-				console.log(this.burgers);
 				this.burgers = (result["burgers"]);
 				// this.burgers.push(result["burgers"]);
-				console.log('This.burgers below');				
+				console.log('$$$$$$$$$$$$$$$This.burgers below$$$$$$$$$$$$$$$$$$');
 				console.log(this.burgers);
-				console.log(this.burgers[0].name)
-				console.log('This.Items below');
-				console.log(this.items);
+				console.log(this.burgers[0].name);
+				console.log(this.burgers[0].ingredients);
+
 				this.items = result["items"];
 				// this.items.push(result["items"]);
 				console.log('this.items below');
@@ -312,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				console.log('Working');
 				console.log(ingredient); 
 
-				var ingredient_id = ingredient.id
+				var ingredient_id = ingredient.id;
 				variable = document.querySelector('#item'+ingredient_id);
 				console.log('variable below');
 				console.log(variable);
@@ -328,6 +326,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 		
+			},
+
+			emptyIngredients: function() {
+				this.buttons[2].visible = true;
+				variable2 = document.querySelector('.menubuttons3');
+
+				variable2.style.borderColor = "";
+				variable2.style.borderWidth = "";
+				this.newBurger = [];
+				console.log('Working');
+				console.log(this.buttons[2].visible);
+				console.log(this.newBurger);
 			},
 
 			sendIngredients: function() {
@@ -403,6 +413,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			orderPost: function() {
 				this.orderdetails = [];
 				var identity = document.querySelector('.userid');
+				console.log(identity);
 				var iden = identity.innerHTML;
 				var send_to_final = {
 					subtotal: parseFloat(this.total),
@@ -412,6 +423,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					console.log(result);
 
 				})
+				
+				window.location = "http://localhost:3000/"
+
 			}
 
 

@@ -3,16 +3,18 @@
 	<h1> Final Step </h1>
 	<br>
 	<p><% @orderitems.each do |item| %>
-			Type: <%= item.menu_item_type %><br>
-			Quantity: <%= item.quantity %><br>
+			<% if item.status == "Bagged" %>
+			<i class="icon-large icon-circle-arrow-right icon-white"></i><%=item.menu_item.name %><br>
+			<% end %>
 		<% end %>
-	</p>
 	<h3>Your Total: $<%= @total %> </h3>
-
+	</p>
+<!-- 	<img src="http://imgur.com/gJcgnEL" alt="dontmatta" height="50" width="50">
+ -->
 	<br>
-	<script src="https://checkout.stripe.com/checkout.js"></script>
+	<!-- <script src="https://checkout.stripe.com/checkout.js"></script>
 
-	<form action="/your-server-side-code" method="POST">
+	<form action="/api/checkout" v-on:click="orderPost()" method="POST">
 	  <script
 	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 	    data-key="pk_test_L1LZtM3Cu1haNRvm3imSoZfu"
@@ -22,6 +24,10 @@
 	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
 	    data-locale="auto">
 	  </script>
-	</form>
+	</form> -->
+	<div class="userid"><% current_user.id %></div>
+
+    <h6 class="finalize" v-on:click="orderPost()">Finalize</h6>
+
 	</div>
 </div>

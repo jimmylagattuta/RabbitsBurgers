@@ -28,3 +28,13 @@ json.set! :items do
 		json.item_type_id item.item_type_id
 	end
 end
+
+json.set! :burger_ingredients do
+
+	json.array! @burgeringredients.each do |ingre|
+		json.id ingre.id
+		json.burger_id ingre.burger_id
+		json.ingredient_id ingre.ingredient_id
+	end
+end
+

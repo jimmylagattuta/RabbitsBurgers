@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   post "/api/create_order" => "apidatas#create"
   post "/api/finalorder" => "apidatas#checkout"
   get "/api/checkout" => "apidatas#finish"
+  post "/api/checkout" => "apidatas#new"
   post "/api/buildburger" => "apidatas#buildburger"
+  get "/api/new" => "apidatas#new"
 
   resources :charges
 

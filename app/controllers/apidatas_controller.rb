@@ -5,6 +5,7 @@ class ApidatasController < ApplicationController
 		@burgers = Burger.all
 		@ingredients = Ingredient.all
 		@items = Item.all
+		@burgeringredients = BurgerIngredient.all
 	end
 
 	def create
@@ -114,6 +115,7 @@ class ApidatasController < ApplicationController
 			orditem.order_id = @order.id
 			orditem.save
 		end
+		flash[:success] = "Order Submitted"
 		render "checkout.json.jbuilder"
 
 	end
@@ -126,6 +128,8 @@ class ApidatasController < ApplicationController
 		@orderitems.each do |orderitem|
 			@total += orderitem.menu_item.price
 		end
+
+		@ingredients = Ingredient.all
 
 	end
 
@@ -163,7 +167,7 @@ class ApidatasController < ApplicationController
 
 		end
 		@burgingre = BurgerIngredient.where(burger_id: @custom.id)
-
+		# @custom.delete
 	end
 
 	# STRIPE API
